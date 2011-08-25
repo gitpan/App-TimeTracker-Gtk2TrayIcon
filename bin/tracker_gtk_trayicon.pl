@@ -20,7 +20,7 @@ tracker_gtk_trayicon.pl - run App::TimeTracker::Gtk2TrayIcon
 
 =head1 VERSION
 
-version 1.000
+version 1.001
 
 =head1 SYNOPSIS
 
