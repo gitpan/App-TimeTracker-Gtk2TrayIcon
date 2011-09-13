@@ -19,7 +19,7 @@ my %module_build_args = (
     'Thomas Klausner <domm@cpan.org>'
   ],
   'dist_name' => 'App-TimeTracker-Gtk2TrayIcon',
-  'dist_version' => '1.001',
+  'dist_version' => '1.002',
   'license' => 'perl',
   'module_name' => 'App::TimeTracker::Gtk2TrayIcon',
   'recommends' => {},

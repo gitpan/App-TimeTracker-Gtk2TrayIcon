@@ -26,4 +26,4 @@ requires:
   perl: 5.010
 resources:
   repository: git://github.com/domm/App-TimeTracker-Gtk2TrayIcon.git
-version: 1.001
+version: 1.002

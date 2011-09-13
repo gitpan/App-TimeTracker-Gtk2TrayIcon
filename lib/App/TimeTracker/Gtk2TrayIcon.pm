@@ -2,7 +2,7 @@ package App::TimeTracker::Gtk2TrayIcon;
 use 5.010;
 use strict;
 use warnings;
-our $VERSION = "1.001";
+our $VERSION = "1.002";
 # ABSTRACT: Show TimeTracker status in a GTK tray applet
 
 use Gtk2;
@@ -14,7 +14,7 @@ use FindBin qw($Bin);
 use File::ShareDir qw(dist_file);
 
 sub init {
-
+    my ($class, $run) = @_;
     my $storage_location = App::TimeTracker::Proto->new->home;
 
     my $lazy =
@@ -47,11 +47,9 @@ sub init {
                 $current = 'nothing';
             }
         } );
-
     $eventbox->signal_connect(
         'enter-notify-event' => sub {
             unless ( $current eq 'nothing' ) {
-
                 my $dialog =
                     Gtk2::MessageDialog->new( $window,
                     [qw/modal destroy-with-parent/],
@@ -69,9 +67,9 @@ sub init {
                 $dialog->destroy;
             }
         } );
-
     $window->add($eventbox);
     $window->show_all;
+    Gtk2->main if $run;
 }
 
 1;
@@ -86,7 +84,7 @@ App::TimeTracker::Gtk2TrayIcon - Show TimeTracker status in a GTK tray applet
 
 =head1 VERSION
 
-version 1.001
+version 1.002
 
 =head1 DESCRIPTION
 
